@@ -105,6 +105,7 @@ stdout_logfile = /var/log/supervisord/vehicleStat.log
 设置当前目录为$GOPATH
 
 ```
-alias gopath='export GOPATH=`pwd` && echo $GOPATH'
+alias gopath='export GOPATH=$GOPATH:`pwd` && echo $GOPATH'
 ```
+
 

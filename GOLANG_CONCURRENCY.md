@@ -30,9 +30,10 @@ slides:
 
 go的解决方案：
 
-1.	CSP
-2.	goroutine
-3.	gc
+1.	CSP, a model of concurrency in which values are passed between independent activites(goroutines) but variables are for the most part confined to a single activity.
+2.	goroutine, each concurrently executing activity
+3. channel, if goroutines are the activites of a concurrent Go program, channels are the connections between them.
+4.	gc
 
 >目的是简化程序员的负担，直接从需要实现的功能考虑设计，而不是从底层锁级别考虑设计
 
@@ -90,3 +91,6 @@ c1 := make(<-chan int)
 * 当一个select有default分支的时候,是比没有default分支的节省cpu资源的
 * 如果channel里的值是引用或者指针类型,则在并发中必须保证访问这些值是串行的,或者是只读的
 * 在发起channel流程中关闭channel,否则很大可能导致deadlock
+
+
+####补充

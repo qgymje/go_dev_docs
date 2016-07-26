@@ -67,16 +67,32 @@ t4.Seconds()
 strings
 ----
 
+array
+----
 
 slice
 ----
 
 map
 ----
+1. map is a reference type
+2. var m map[KeyType]ValueType zero value is nil
+   > 如果要对m进行操作会panic
+3. 初始化
+   > m := make(map[string]int)
+   > m1 := map[string]int{}
+3. KeyType必须comparable, 即支持==, != 操作
+4. 使用"comma ok idimo"判断key是否存在, 返回两个值, 第二个值为bool
+5. map无序, 如果要排序需要一个额外的slice保存key(或者根据value排序)的顺序
+6. map默认不支持并发安全操作
+7. 
+
 
 interface
 ----
->既然Interface可以装任何数据类型，那它不就是一个所谓的泛型么？
+1. type assertion 与 type switch的区别?
+> type assertion就是知道interface的concrete type, 是一个已知的操作
+> type switch是不知道interface的类型, 因此需要switch case
 
 func
 ----

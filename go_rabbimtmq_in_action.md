@@ -30,16 +30,18 @@ $ go get -u -v github.com/streadway/amqp
 正式编码
 ===
 
-1. 建立Connection
+建立Connection
+----
 ```
-conn, err := amqp.Dial("amqp://odyssey:odyssey@localhost:5672/odyssey")
+conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
 if err != nil {
     log.Fatal(err)
 }
 defer conn.Close()
 ```
 
-2. 连接Channel
+连接Channel
+----
 ```
 ch, err := conn.Channel()
 if err != nil {
@@ -48,7 +50,8 @@ if err != nil {
 
 ```
 
-3. 声明Exchnage
+声明Exchnage
+----
 ```
 //func (me *Channel) ExchangeDeclare(name, kind string, durable, autoDelete, internal, noWait bool, args Table) error 
 if err := ch.ExchangeDeclare(
@@ -65,7 +68,8 @@ if err := ch.ExchangeDeclare(
 
 ```
 
-4. 生产者发消息
+生产者发消息
+----
 ```
 //func (me *Channel) Publish(exchange, key string, mandatory, immediate bool, msg Publishing) error 
 err := ch.Publish(
@@ -84,7 +88,8 @@ err := ch.Publish(
 )
 ```
 
-5. 生产者消息发送确认
+生产者消息发送确认
+----
 ```
 func confirm(ch *amqp.Channel) {
 	// 确保消息收到
@@ -108,7 +113,8 @@ func confirm(ch *amqp.Channel) {
 
 ```
 
-6. 消费者声明队列以及绑定队列
+消费者声明队列以及绑定队列
+----
 消费者与生产者是分开的两个部分, 通常是两个程序, 但建立连接与创建通道是一样的流程, 消费者需要声明队列
 ```
 //func (me *Channel) QueueDeclare(name string, durable, autoDelete, exclusive, noWait bool, args Table) (Queue, error)
@@ -136,7 +142,8 @@ if err = ch.QueueBind(
 }
 ```
 
-7. 消费者接收消息
+消费者接收消息
+----
 ```
 //func (me *Channel) Consume(queue, consumer string, autoAck, exclusive, noLocal, noWait bool, args Table) (<-chan Delivery, error)
 msgs, err := ch.Consume(
@@ -153,4 +160,5 @@ if err != nil {
 }
 
 ```
-之后完善细节
+
+之后完善细节(TODO, will never do, I guess...)

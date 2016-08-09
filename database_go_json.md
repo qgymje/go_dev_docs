@@ -122,3 +122,9 @@ func (v NullString) UnmarshalJSON(data []byte) error {
 总结
 ----
 Go语言的接口, 扮演了桥梁的角色, 连接起了Go与其它领域的数据转换, 通过实现标准库的接口, 我们可以让Go的数据类型轻松适应不同数据领域.
+
+
+[参考]
+http://dennissuratna.com/marshalling-nullable-string-db-value-to-json-in-go/
+http://blog.carbonfive.com/2015/07/09/there-will-be-sql/
+http://marcesher.com/2014/10/13/go-working-effectively-with-database-nulls/

@@ -16,7 +16,7 @@ sql标准库里带了这么几个类型: ```sql.NullString, sql.NullInt64, sql.N
 通过源码看到, NullString的结构与两个方法:
 
 ```go
-type NullString {
+type NullString struct{
     String string
     Valid bool
 }

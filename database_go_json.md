@@ -40,7 +40,7 @@ Scan实现了```sql.Scanner```接口, Value实现了```driver.Valuer```接口. �
 
 type NullTime struct {
     Time  time.Time
-    Valid bool 
+    Valid bool
 }
 
 func (nt *NullTime) Scan(value interface{}) error {
@@ -78,7 +78,7 @@ func ToNullTime(t time.Time) NullTime {
 ```go
 {
     ...
-    "column_name" : "Hello?", 
+    "column_name" : "Hello?",
     ...
 }
 //or
@@ -126,5 +126,7 @@ Go语言的接口, 扮演了桥梁的角色, 连接起了Go与其它领域的数
 
 [参考]
 http://dennissuratna.com/marshalling-nullable-string-db-value-to-json-in-go/
+
 http://blog.carbonfive.com/2015/07/09/there-will-be-sql/
+
 http://marcesher.com/2014/10/13/go-working-effectively-with-database-nulls/

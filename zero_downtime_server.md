@@ -9,7 +9,7 @@ r.GET("/", index)
 endless.ListenAndServe(":3000", r)
 ```
 
-我们编写一个带指定时间招待的处理函数：
+我们编写一个带指定时间超时的处理函数：
 
 ```
 func index(c *gin.Context) {

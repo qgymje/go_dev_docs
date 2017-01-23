@@ -33,7 +33,7 @@
 
 不满足simple request的要求都发会起preflight reqeust, 它做了啥？
 
-有哪些不满足的情况：
+有哪些不满足的情况, 符合任意一项都会发起preflight request:
 
 1. http method: PUT OPTIONS DELETE
 2. content type: applicatoin/json, application/xml等

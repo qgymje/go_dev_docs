@@ -14,5 +14,6 @@ redis使用topic + channel模式，当有多个消费端使用同一个channel�
 
 ### RabbitMQ
 
-RabbitMQ 则通过更多的抽象，提供更强大的消息分发模式，比如Reids的模式，则通过设计exchange的类型为```direct```可实现，而实现NSQ的topic + channel的模式则通过设置exchange的类型为```topic```即可实现
+RabbitMQ 则通过更多的抽象，提供更强大的消息分发模式，比如Reids的模式，则通过设计exchange的类型为```direct```可实现，而实现NSQ的topic + channel的模式则通过设置exchange的类型为```fanout```即可实现
 
+除此之外RabbitMQ提供了更多的功能，比如有更灵活的topic模式的exchange, 生产者Confirmation机制, 消费者ACK机制, 数据存储，排它队列等

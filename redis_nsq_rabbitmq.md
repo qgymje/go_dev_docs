@@ -6,6 +6,8 @@
 ### Redis
 
 Redis使用```lpush+brpop``` 或 ```rpush+blpop```时，作为消费端，其模式是当有多个消费端时，消息会按Round-Robin模式分发
+Redis可以```brpop```或```blpop```也可以同时监听多个list, 接收多方数据
+Redis的pubsub模式支持消息的广播
 
 ### NSQ
 
